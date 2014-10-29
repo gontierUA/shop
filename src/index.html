@@ -2,9 +2,108 @@
 <html>
 <head lang="en">
 	<meta charset="UTF-8">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="js/libs/selectric/selectric.css">
+	<link rel="stylesheet" href="css/common.css"/>
 	<title>Shop</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="js/libs/selectric/jquery.selectric.min.js"></script>
+	<script src="js/libs/jqslider/jqslider.js"></script>
+	<script src="js/common.js"></script>
 </head>
 <body>
-
+<div class="wraper">
+	<!--<nav>-->
+	<ul class="navigation cf">
+		<li class="nav_item active"><a href="#">Каталог товаров</a></li>
+		<li class="nav_item"><a href="#">Корзина</a></li>
+	</ul>
+	<!--</nav>-->
+	<header class="content_header cf">
+		<ul class="breadcrumbs cf">
+			<li><a href="#">Каталог товаров</a></li>
+			<li><a href="#">Кожаные браслеты</a></li>
+		</ul>
+		<h1 class="headline">
+			Браслеты и украшения
+		</h1>
+		<div class="sorting cf">
+			<div class="sorting__el f_left">
+				<label for="sort_by">Сортировать по: </label>
+				<select name="sort_by" id="sort_by">
+					<option value="1">Заголовку</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+				</select>
+			</div>
+			<div class="sorting__el f_left">
+				<label for="goods_amount">Товаров на странице: </label>
+				<select name="goods_amount" id="goods_amount">
+					<option value="1">25</option>
+					<option value="2">goods.length</option>
+				</select>
+			</div>
+		</div>
+	</header>
+	<aside>
+		<div class="filters">
+			<div id="jqslider"></div>
+		</div>
+	</aside>
+	<section class="content cf">
+		<div class="goods_wraper cf">
+			<div class="goods_b">
+				<img class="goods_icon" src="imgs/goods.jpg" alt="goods"/>
+				<p class="goods_code">75054</p>
+				<p class="goods_description">Кожаный браслет с замком из серебра Pandora </p>
+				<p class="price">7 199 руб.</p>
+				<a class="add_to_card" href="#">В корзину</a>
+			</div>
+			<div class="goods_b">
+				<img class="goods_icon" src="imgs/goods.jpg" alt="goods"/>
+				<p class="goods_code">75054</p>
+				<p class="goods_description">Кожаный браслет с замком из серебра Pandora </p>
+				<p class="price">7 199 руб.</p>
+				<a class="add_to_card" href="#">В корзину</a>
+			</div>
+			<div class="goods_b">
+				<img class="goods_icon" src="imgs/goods.jpg" alt="goods"/>
+				<p class="goods_code">75054</p>
+				<p class="goods_description">Кожаный браслет с замком из серебра Pandora </p>
+				<p class="price">7 199 руб.</p>
+				<a class="add_to_card" href="#">В корзину</a>
+			</div>
+			<div class="goods_b">
+				<img class="goods_icon" src="imgs/goods.jpg" alt="goods"/>
+				<p class="goods_code">75054</p>
+				<p class="goods_description">Кожаный браслет с замком из серебра Pandora </p>
+				<p class="price">7 199 руб.</p>
+				<a class="add_to_card" href="#">В корзину</a>
+			</div>
+			<div class="goods_b">
+				<img class="goods_icon" src="imgs/goods.jpg" alt="goods"/>
+				<p class="goods_code">75054</p>
+				<p class="goods_description">Кожаный браслет с замком из серебра Pandora </p>
+				<p class="price">7 199 руб.</p>
+				<a class="add_to_card" href="#">В корзину</a>
+			</div>
+			<div class="goods_b">
+				<img class="goods_icon" src="imgs/goods.jpg" alt="goods"/>
+				<p class="goods_code">75054</p>
+				<p class="goods_description">Кожаный браслет с замком из серебра Pandora </p>
+				<p class="price">7 199 руб.</p>
+				<a class="add_to_card" href="#">В корзину</a>
+			</div>
+		</div>
+	</section>
+	<ul class="pager">
+		<li class="pager_item active"><a href="#">1</a></li>
+		<li class="pager_item"><a href="#">2</a></li>
+		<li class="pager_item"><a href="#">3</a></li>
+		<li class="pager_item"><a href="#">4</a></li>
+		<li class="pager_item"><a href="#">5</a></li>
+		<li class="pager_item"><a href="#">6</a></li>
+	</ul>
+</div>
 </body>
 </html>
