@@ -149,8 +149,25 @@ aside {
 	border-bottom: 1px solid #cdcdcd;
 	max-width: 852px;
 }
+.goods_preload {
+	background: none repeat scroll 0 0 #fff;
+	height: 100%;
+	opacity: 0.9;
+	position: absolute;
+	width: 100%;
+	display: none;
+}
+.goods_preload > img {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
 .goods_wraper {
 	margin-top: 42px;
+	position: relative;
 }
 .goods_b {
 	float: left;
