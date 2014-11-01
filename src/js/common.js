@@ -35,4 +35,12 @@ $(document).ready(function(){
 
 		}
 	});
+
+	$('.tab__switcher').on('click',function(){
+		var target = $(this).attr('rel');
+		$('.tabs__content').removeClass('shown');
+		$('.tab__switcher').removeClass('active');
+		$(this).addClass('active');
+		$('#'+target).addClass('shown');
+	})
 });

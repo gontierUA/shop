@@ -19,6 +19,13 @@ body {
 a {
 	text-decoration: none;
 }
+b {
+	font-weight: 600;
+}
+sub {
+	font-size: 13px;
+	vertical-align: middle;
+}
 .wraper {
 	width: 1050px;
 	background-color: #FFF;
@@ -184,6 +191,12 @@ aside {
 .goods_icon {
 	display: block;
 	margin: 14px auto 0;
+	width: 100%;
+	height: auto;
+}
+.home .goods_icon_wraper {
+	height: 135px;
+	width: 179px;
 }
 .goods_code {
 	color: #b7b7b7;
@@ -258,3 +271,112 @@ aside {
 	background-color: #FFE187;
 }
 /*END of PAGER*/
+
+/*GOODS PAGE*/
+.separate_goods_page .goods_icon_wraper {
+	width: 299px;
+	height: 225px;
+	margin-bottom: 43px;
+}
+.tab__switcher {
+	border-radius: 3px;
+	background-color: #EBEBEB;
+	padding: 12px;
+	float: left;
+	font-weight: 600;
+	color: #848484;
+	font-size: 12px;
+	margin-right: 13px;
+}
+.tab__switcher:hover,.tab__switcher.active {
+	background-color: #FFCF41;
+	cursor: pointer;
+	color: #fff;
+}
+.tabs__content {
+	display: none;
+	width: 450px;
+	margin-left: 9px;
+	margin-top: 23px;
+}
+.tabs__content.shown {
+	display: block;
+}
+.goods_add_info li {
+	margin-bottom: 12px;
+}
+.goods_add_info li span {
+	width: 141px;
+	font-size: 12px;
+}
+.name_field {
+	color: #ababab;
+}
+.value_field {
+
+}
+.goods_wraper .goods_info:first-child {
+	margin-right: 23px;
+}.tabs {
+	 margin-top: 9px;
+ }
+.separate_goods_page .price {
+	padding-left: 18px;
+	margin-top: 6px;
+	padding-right: 17px;
+}
+.separate_goods_page .add_to_card {
+	margin-top: 0;
+}
+.separate_goods_page .goods_wraper {
+	margin-bottom: 46px;
+	border-bottom: 1px solid #cdcdcd;
+	padding-bottom: 50px;
+}
+.more_goods .goods_icon_wraper {
+	height: auto;
+	width: 132px;
+	margin-bottom: 0;
+}
+.more_goods .goods_b {
+	width: 20%;
+	border: none;
+}
+.more_goods .goods_b:hover {
+	border: none;
+}
+h2 {
+	font-weight: 300;
+	color: #010101;
+	font-size: 30px;
+	line-height: 24px;
+}
+.more_goods .goods_description {
+	font-size: 11px;
+	line-height: 14px;
+	margin-top: 0;
+	padding-left: 13px;
+
+}
+.more_goods .price {
+	font-size: 16px;
+	margin-top: 21px;
+	padding-left: 13px;
+
+}
+.more_goods .add_to_card {
+	font-size: 10px;
+	height: 28px;
+	line-height: 30px;
+	margin-left: 11px;
+	margin-top: 9px;
+	padding: 0 9px 0 12px;
+	width: 55px;
+
+}
+.more_goods .goods_code {
+	font-size: 11px;
+	padding-left: 12px;
+
+}
+/*END of GOODS PAGE*/
