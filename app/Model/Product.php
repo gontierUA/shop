@@ -7,7 +7,7 @@ class Product extends Model
         $mysqli = Product::open_database_connection();
 
         $products = array();
-        if ($result = $mysqli->query('SELECT id, sku, title, image, price FROM product ORDER BY id')) {
+        if ($result = $mysqli->query('SELECT id, sku, title, image, price FROM product ORDER BY watched DESC')) {
             while ($row = $result->fetch_assoc()) {
                 $products[] = $row;
             }
