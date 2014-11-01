@@ -63,10 +63,29 @@ class Product extends Model
                 }
                 $title = $field['title'];
             }
-            $result->close();
         }
 
         $mysqli->close();
         return $title;
+    }
+
+    public function card_record($id) {
+        $mysqli = Product::open_database_connection();
+
+        $cartCount = 0;
+        $inCart = $mysqli->query('SELECT in_cart FROM product WHERE id=' . $id);
+        while ($cartInfo = $inCart->fetch_assoc()) {
+            $cartCount = $cartInfo['in_cart'];
+        }
+        $cartCount++;
+
+        $isInserted = $mysqli->query('UPDATE product SET in_cart = ' . $cartCount . ' WHERE id = ' . $id);
+
+        $mysqli->close();
+        if($isInserted){
+            return true;
+        }else{
+            return false;
+        }
     }
 }
