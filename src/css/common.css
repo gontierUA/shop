@@ -380,3 +380,9 @@ h2 {
 
 }
 /*END of GOODS PAGE*/
+
+/*CHECKOUT PAGE*/
+.cell {
+	float: left;
+}
+/*END of CHECKOUT PAGE*/
