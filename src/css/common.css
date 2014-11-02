@@ -457,4 +457,10 @@ h2 {
 	line-height: 50px;
 	padding-left: 15px;
 }
+.field_wraper label {
+	display: block;
+}
+.field_wraper {
+	float: left;
+}
 /*END of CHECKOUT PAGE*/
