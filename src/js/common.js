@@ -42,7 +42,15 @@ $(document).ready(function(){
 		$('.tab__switcher').removeClass('active');
 		$(this).addClass('active');
 		$('#'+target).addClass('shown');
-	})
+	});
+
+	$('.remove_from_checkout').on('click',function(e){
+		e.preventDefault();
+		$(this).parents('.item').fadeOut(function(){
+			$(this).remove();
+		});
+	});
+
 
 	checkoutCalc();
 });
@@ -51,13 +59,18 @@ function checkoutCalc() {
 	var itemRow = $('.checkout_table .item');
 	var itemRowNumberField = itemRow.find('.counter');
 	var thisItemDefaultPrice = null;
+	var totalAmount = $('.total_amount');
 	itemRowNumberField.on('change',function(){
+		var allItemsPrice = 0;
 		var thisItemPrice = $(this).parents('.item').find('.price_number');
-		thisItemDefaultPrice = thisItemDefaultPrice ? thisItemDefaultPrice : thisItemPrice.text();
-		thisItemPrice.text($(this).val() * thisItemDefaultPrice);
+		thisItemDefaultPrice = thisItemDefaultPrice ? thisItemDefaultPrice : parseInt(thisItemPrice.text().replace(/ /g,''));
+		var currentItemPrice = $(this).val() * thisItemDefaultPrice;
+		thisItemPrice.text(currentItemPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "));
+		var allItemsPriceEl = itemRow.find('.price_number');
+		 allItemsPriceEl.each(function(){
+			 allItemsPrice += parseInt($(this).text().replace(/ /g,''));
+		 });
+		totalAmount.text(allItemsPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "));
 	});
-	console.log(itemRowNumberField);
-	//itemRow.each(function(){
-	//	var itemRowNumberField = $(this).find('.counter');
-	//})
 }
+

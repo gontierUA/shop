@@ -85,10 +85,10 @@
 					<p class="goods_description">Кожаный браслет с замком из серебра Pandora </p>
 				</td>
 				<td class="third">
-					<input class="counter" type="number" value="1"/>
+					<input class="counter" type="number" value="1" min="1" max="99"/>
 				</td>
 				<td class="fourth">
-					<p class="price"><span class="price_number">7 199 </span><sub>руб.</sub></p>
+					<p class="price"><span class="price_number">7 199</span><sub> руб.</sub></p>
 				</td>
 				<td class="fifth">
 					<a class="add_to_card remove_from_checkout" href="goods.html">Удалить</a>
@@ -105,10 +105,10 @@
 					<p class="goods_description">Кожаный браслет с замком из серебра Pandora </p>
 				</td>
 				<td class="third">
-					<input class="counter" type="number" value="1"/>
+					<input class="counter" type="number" value="1" min="1" max="99"/>
 				</td>
 				<td class="fourth">
-					<p class="price"><span class="price_number">7 199</span><sub>руб.</sub></p>
+					<p class="price"><span class="price_number">7 199</span><sub> руб.</sub></p>
 				</td>
 				<td class="fifth">
 					<a class="add_to_card remove_from_checkout" href="goods.html">Удалить</a>
@@ -116,7 +116,33 @@
 			</tr>
 		</table>
 		<div class="amount">
-			Стоимость <span class="amout_summ">21 597</span><sub>руб.</sub>
+			Стоимость <span class="total_amount">14 398</span><sub> руб.</sub>
+		</div>
+		<div class="checkout_form_wraper">
+			<form action="#" class="checkout_form" name="checkout">
+				<div class="field_wraper">
+					<label>
+						Имя
+						<input type="text"/>
+						<p>как к вам обращаться?</p>
+					</label>
+				</div>
+				<div class="field_wraper">
+					<label>
+						Email
+						<input type="text"/>
+						<p>для отправки деталей заказа</p>
+					</label>
+				</div>
+				<div class="field_wraper">
+					<label>
+						Телефон
+						<input type="text"/>
+						<p>для связи с курьером</p>
+					</label>
+				</div>
+				<button type="submit">Заказать и уточнить детали</button>
+			</form>
 		</div>
 	</section>
 </div>
