@@ -13,20 +13,14 @@
     }
 ?>
 
-
 <!DOCTYPE html>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/web/js/libs/selectric/selectric.css">
-    <link rel="stylesheet" href="/web/js/libs/ion.rangeSlider/css/ion.rangeSlider.css"/>
-    <link rel="stylesheet" href="/web/js/libs/ion.rangeSlider/css/ion.rangeSlider.skinNice.css"/>
     <link rel="stylesheet" href="/web/css/common.css"/>
     <title>Shop</title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="/web/js/libs/selectric/jquery.selectric.min.js"></script>
-    <script src="/web/js/libs/ion.rangeSlider/ion.rangeSlider.min.js"></script>
     <script src="/web/js/common.js"></script>
 </head>
 <body class="<?php echo $bodyClass ?>">
