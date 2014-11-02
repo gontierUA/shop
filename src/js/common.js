@@ -43,4 +43,21 @@ $(document).ready(function(){
 		$(this).addClass('active');
 		$('#'+target).addClass('shown');
 	})
+
+	checkoutCalc();
 });
+
+function checkoutCalc() {
+	var itemRow = $('.checkout_table .item');
+	var itemRowNumberField = itemRow.find('.counter');
+	var thisItemDefaultPrice = null;
+	itemRowNumberField.on('change',function(){
+		var thisItemPrice = $(this).parents('.item').find('.price_number');
+		thisItemDefaultPrice = thisItemDefaultPrice ? thisItemDefaultPrice : thisItemPrice.text();
+		thisItemPrice.text($(this).val() * thisItemDefaultPrice);
+	});
+	console.log(itemRowNumberField);
+	//itemRow.each(function(){
+	//	var itemRowNumberField = $(this).find('.counter');
+	//})
+}
