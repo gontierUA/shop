@@ -102,7 +102,38 @@ class Product extends Model
             $userCartInfo = mysqli_fetch_assoc($userCartQuery);
             $mysqli->close();
             $itemArr = explode(";", $userCartInfo['items']);
-            return count($itemArr);
+            return count($itemArr) - 1;
+        }
+        $mysqli->close();
+        return false;
+    }
+
+    public function get_cart_items()
+    {
+        $mysqli = Model::open_database_connection();
+        $userCartQuery = $mysqli->query('SELECT items FROM cart WHERE id = "' . session_id() . '"');
+
+        $cartContent = array();
+        $totalPrice = 0;
+        if($userCartQuery->num_rows > 0) {
+            $userCartInfo = mysqli_fetch_assoc($userCartQuery);
+            $itemArr = explode(";", $userCartInfo['items']);
+
+            $cleanArr = array_count_values($itemArr);
+            unset($cleanArr['']);
+
+            foreach ($cleanArr as $key=>$count) {
+                $result = $mysqli->query('SELECT id, sku, title, image, price FROM product WHERE id=' . $key);
+                while ($row = $result->fetch_assoc()) {
+                    $row['price'] = $row['price'] * $count;
+                    $row['count'] = $count;
+                    $cartContent[] = $row;
+                    $totalPrice = $totalPrice + $row['price'];
+                }
+            }
+            $mysqli->close();
+            $cartContent['total_price'] = $totalPrice;
+            return $cartContent;
         }
         $mysqli->close();
         return false;

@@ -1,5 +1,16 @@
 <?php
-$routes = explode('/', $_SERVER['REQUEST_URI']);
+    $routes = explode('/', $_SERVER['REQUEST_URI']);
+    switch ($routes[1]) {
+        case ('cart') :
+            $bodyClass = 'checkout_page';
+            break;
+        case ('products') :
+            $bodyClass = 'separate_goods_page';
+            break;
+        default:
+            $bodyClass = 'home';
+            break;
+    }
 ?>
 
 
@@ -18,7 +29,7 @@ $routes = explode('/', $_SERVER['REQUEST_URI']);
     <script src="/web/js/libs/ion.rangeSlider/ion.rangeSlider.min.js"></script>
     <script src="/web/js/common.js"></script>
 </head>
-<body class="<?php echo ($routes[1] == '') ? 'home': 'separate_goods_page' ?>">
+<body class="<?php echo $bodyClass ?>">
 <div class="wraper">
     <ul class="navigation cf">
         <li class="nav_item active">

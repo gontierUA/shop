@@ -58,7 +58,7 @@ $(document).ready(function(){
                 item: itemID
             }
         }).done(function(msg) {
-            $('#cartCounter').html('(' + msg + ')');
+            $('#cartCounter').html(' (' + msg + ')');
         });
 
     });

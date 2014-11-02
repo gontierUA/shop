@@ -15,7 +15,7 @@ class CartController extends Controller
         $data['title'] = 'Ваш заказ';
         $data['sidebar'] = false;
         $data['cart_counter'] = $this->model->get_cart_counter();
-
+        $data['cart_items'] = $this->model->get_cart_items();
         $this->view->generate('cart.php', null, $data);
     }
 
