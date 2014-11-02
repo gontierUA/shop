@@ -1,4 +1,7 @@
 <?php
+
+include 'app/Model/Product.php';
+
 class NotFoundController extends Controller
 {
     function __construct()

@@ -32,6 +32,7 @@ sub {
 	border-radius: 5px;
 	margin: 90px auto 40px;
 	/*height: 897px;*/
+    min-height: 500px;
 	position: relative;
 	padding-top: 26px;
 }
@@ -457,7 +458,7 @@ h2 {
     margin-left: 419px;
     margin-top: 14px;
 }
-.amount .amout_summ {
+.amount .total_amount {
     font-size: 32px;
     line-height: 50px;
     padding-left: 15px;

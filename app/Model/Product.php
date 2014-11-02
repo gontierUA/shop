@@ -85,9 +85,9 @@ class Product extends Model
             $mysqli->query('UPDATE cart SET items = "' .  $userCartInfo['items'] . '" WHERE id = "' . session_id() . '"');
             $mysqli->close();
             $itemArr = explode(";", $userCartInfo['items']);
-            return count($itemArr);
+            return count($itemArr) - 1;
         } else {
-            $mysqli->query('INSERT INTO cart (id, items) VALUES ("' . session_id() . '", "' . $id . '")');
+            $mysqli->query('INSERT INTO cart (id, items) VALUES ("' . session_id() . '", "' . $id . ';")');
             $mysqli->close();
             return 1;
         }
@@ -137,5 +137,15 @@ class Product extends Model
         }
         $mysqli->close();
         return false;
+    }
+
+    public function save_items($items)
+    {
+        $mysqli = Model::open_database_connection();
+        foreach ($items as $itemID) {
+            $mysqli->query('UPDATE product SET bought = bought + 1 WHERE id = ' . $itemID);
+        }
+        $mysqli->query('DELETE FROM cart WHERE id ="' . session_id() . '"');
+        $mysqli->close();
     }
 }
