@@ -384,5 +384,77 @@ h2 {
 /*CHECKOUT PAGE*/
 .cell {
 	float: left;
+	width: 100px;
+}
+.checkout_table {
+	margin-top: 30px;
+}
+.checkout_table td {
+	vertical-align: middle;
+}
+
+.checkout_table .goods_icon_wraper {
+	width: 100px;
+}
+.checkout_table tr {
+	border-bottom: 1px solid #cdcdcd;
+}
+/*.checkout_table tr:last-child {*/
+	/*border-bottom: none;*/
+/*}*/
+.checkout_table th {
+	text-align: left;
+	color: #848484;
+	font-size: 14px;
+	line-height: 32px;
+}
+.checkout_table .first {
+	width: 137px;
+}
+.checkout_table .second {
+	width: 265px;
+
+}
+.checkout_table .third {
+	width: 192px;
+
+}
+.checkout_table .fourth {
+	width: 129px;
+
+}
+.checkout_table .fifth {
+
+}
+.checkout_table .price {
+	font-size: 20px;
+	padding-left: 0;
+	margin-top: 0;
+}
+.checkout_table .goods_code,.checkout_table .goods_description {
+	padding-left: 0;
+	margin-top: 0;
+}
+.checkout_table .add_to_card.remove_from_checkout,.checkout_table .add_to_card.remove_from_checkout:hover {
+	background: url("../imgs/remove_icon.png") no-repeat scroll 8px 11px #e0e0e0;
+	box-shadow: 2px 2px 0 #bebebe;
+	color: #494949;
+	background-position: 8px 9px;
+	padding-left: 14px;
+	width: 89px;
+}
+.checkout_page .content {
+	border-bottom: 0;
+}
+.amount {
+	font-size: 20px;
+	line-height: 32px;
+	margin-left: 419px;
+	margin-top: 14px;
+}
+.amount .amout_summ {
+	font-size: 32px;
+	line-height: 50px;
+	padding-left: 15px;
 }
 /*END of CHECKOUT PAGE*/

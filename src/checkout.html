@@ -13,7 +13,7 @@
 	<script src="js/libs/ion.rangeSlider/ion.rangeSlider.min.js"></script>
 	<script src="js/common.js"></script>
 </head>
-<body>
+<body class="checkout_page">
 <div class="wraper">
 	<!--<nav>-->
 	<ul class="navigation cf">
@@ -22,53 +22,101 @@
 	</ul>
 	<!--</nav>-->
 	<header class="content_header cf">
-		<ul class="breadcrumbs cf">
-			<li><a href="#">Каталог товаров</a></li>
-			<li><a href="#">Кожаные браслеты</a></li>
-		</ul>
 		<h1 class="headline">
 			Ваш заказ
 		</h1>
 	</header>
 	<section class="content cf">
-		<div class="checkout_table">
-			<div class="row first">
-				<div class="cell">
-					Фото
-				</div>
-				<div class="cell">
-					Наименование
-				</div>
-				<div class="cell">
-					Количество
-				</div>
-				<div class="cell">
-					Стоимость
-				</div>
-				<div class="cell">
+		<!--<div class="checkout_table">-->
+			<!--<div class="row first cf">-->
+				<!--<div class="cell">-->
+					<!--Фото-->
+				<!--</div>-->
+				<!--<div class="cell">-->
+					<!--Наименование-->
+				<!--</div>-->
+				<!--<div class="cell">-->
+					<!--Количество-->
+				<!--</div>-->
+				<!--<div class="cell">-->
+					<!--Стоимость-->
+				<!--</div>-->
+				<!--<div class="cell">-->
 
-				</div>
-			</div>
-			<div class="row">
-				<div class="cell">
+				<!--</div>-->
+			<!--</div>-->
+			<!--<div class="row cf">-->
+				<!--<div class="cell">-->
+					<!--<div class="goods_icon_wraper">-->
+						<!--<img class="goods_icon" src="imgs/goods.jpg" alt="goods"/>-->
+					<!--</div>-->
+				<!--</div>-->
+				<!--<div class="cell">-->
+					<!--<p class="goods_code">75054</p>-->
+					<!--<p class="goods_description">Кожаный браслет с замком из серебра Pandora </p>-->
+				<!--</div>-->
+				<!--<div class="cell">-->
+					<!--<input type="number"/>-->
+				<!--</div>-->
+				<!--<div class="cell">-->
+					<!--<p class="price">7 199 руб.</p>-->
+				<!--</div>-->
+				<!--<div class="cell">-->
+					<!--<a class="add_to_card remove_from_checkout" href="goods.html">Удалить</a>-->
+				<!--</div>-->
+			<!--</div>-->
+		<!--</div>-->
+		<table class="checkout_table">
+			<tr>
+				<th class="first">Фото</th>
+				<th class="second">Наименование</th>
+				<th class="third">Количество</th>
+				<th class="fourth">Стоимость</th>
+				<th class="fifth"></td>
+			</tr>
+			<tr class="item">
+				<td class="first">
 					<div class="goods_icon_wraper">
 						<img class="goods_icon" src="imgs/goods.jpg" alt="goods"/>
 					</div>
-				</div>
-				<div class="cell">
+				</td>
+				<td class="second">
 					<p class="goods_code">75054</p>
 					<p class="goods_description">Кожаный браслет с замком из серебра Pandora </p>
-				</div>
-				<div class="cell">
-					<input type="number"/>
-				</div>
-				<div class="cell">
-					<p class="price">7 199 руб.</p>
-				</div>
-				<div class="cell">
+				</td>
+				<td class="third">
+					<input class="counter" type="number" value="1"/>
+				</td>
+				<td class="fourth">
+					<p class="price"><span class="price_number">7 199 </span><sub>руб.</sub></p>
+				</td>
+				<td class="fifth">
 					<a class="add_to_card remove_from_checkout" href="goods.html">Удалить</a>
-				</div>
-			</div>
+				</td>
+			</tr>
+			<tr class="item">
+				<td class="first">
+					<div class="goods_icon_wraper">
+						<img class="goods_icon" src="imgs/goods.jpg" alt="goods"/>
+					</div>
+				</td>
+				<td class="second">
+					<p class="goods_code">75054</p>
+					<p class="goods_description">Кожаный браслет с замком из серебра Pandora </p>
+				</td>
+				<td class="third">
+					<input class="counter" type="number" value="1"/>
+				</td>
+				<td class="fourth">
+					<p class="price"><span class="price_number">7 199</span><sub>руб.</sub></p>
+				</td>
+				<td class="fifth">
+					<a class="add_to_card remove_from_checkout" href="goods.html">Удалить</a>
+				</td>
+			</tr>
+		</table>
+		<div class="amount">
+			Стоимость <span class="amout_summ">21 597</span><sub>руб.</sub>
 		</div>
 	</section>
 </div>
