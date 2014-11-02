@@ -49,42 +49,47 @@
 </div>
 
 <div class="more_goods cf">
+    <h2>С этим товаром покупают:</h2>
+    <?php foreach ($data['products_bought'] as $item) : ?>
+    <div class="goods_b">
+        <div class="goods_icon_wraper">
+            <img class="goods_icon" src="<?php echo $item['image']; ?>" alt="<?php echo $item['title']; ?>"/>
+        </div>
+        <p class="goods_code"><?php echo $item['sku']; ?></p>
+        <p class="goods_description"><?php echo $item['title']; ?></p>
+        <p class="price"><?php echo $item['price']; ?> грн.</p>
+        <a class="add_to_card" href="products/item/<?php echo $item['id']; ?>">Смотреть</a>
+    </div>
+    <?php endforeach; ?>
+</div>
+
+<div class="more_goods cf">
+    <h2>С этим товаром смотрят:</h2>
+    <?php foreach ($data['products_watched'] as $item) : ?>
+        <div class="goods_b">
+            <div class="goods_icon_wraper">
+                <img class="goods_icon" src="<?php echo $item['image']; ?>" alt="<?php echo $item['title']; ?>"/>
+            </div>
+            <p class="goods_code"><?php echo $item['sku']; ?></p>
+            <p class="goods_description"><?php echo $item['title']; ?></p>
+            <p class="price"><?php echo $item['price']; ?> грн.</p>
+            <a class="add_to_card" href="products/item/<?php echo $item['id']; ?>">Смотреть</a>
+        </div>
+    <?php endforeach; ?>
+</div>
+
+<div class="more_goods cf">
     <h2>С этим товаром выбирают:</h2>
-    <div class="goods_b">
-        <div class="goods_icon_wraper">
-            <img class="goods_icon" src="imgs/goods.jpg" alt="goods"/>
+    <?php foreach ($data['products_also'] as $item) : ?>
+        <div class="goods_b">
+            <div class="goods_icon_wraper">
+                <img class="goods_icon" src="<?php echo $item['image']; ?>" alt="<?php echo $item['title']; ?>"/>
+            </div>
+            <p class="goods_code"><?php echo $item['sku']; ?></p>
+            <p class="goods_description"><?php echo $item['title']; ?></p>
+            <p class="price"><?php echo $item['price']; ?> грн.</p>
+            <a class="add_to_card" href="products/item/<?php echo $item['id']; ?>">Смотреть</a>
         </div>
-        <p class="goods_code">75054</p>
-        <p class="goods_description">Кожаный браслет с замком из серебра Pandora </p>
-        <p class="price">7 199 руб.</p>
-        <a class="add_to_card" href="goods.html">Смотреть</a>
-    </div>
-    <div class="goods_b">
-        <div class="goods_icon_wraper">
-            <img class="goods_icon" src="imgs/goods.jpg" alt="goods"/>
-        </div>
-        <p class="goods_code">75054</p>
-        <p class="goods_description">Кожаный браслет с замком из серебра Pandora </p>
-        <p class="price">7 199 руб.</p>
-        <a class="add_to_card" href="goods.html">Смотреть</a>
-    </div>
-    <div class="goods_b">
-        <div class="goods_icon_wraper">
-            <img class="goods_icon" src="imgs/goods.jpg" alt="goods"/>
-        </div>
-        <p class="goods_code">75054</p>
-        <p class="goods_description">Кожаный браслет с замком из серебра Pandora </p>
-        <p class="price">7 199 руб.</p>
-        <a class="add_to_card" href="goods.html">Смотреть</a>
-    </div>
-    <div class="goods_b">
-        <div class="goods_icon_wraper">
-            <img class="goods_icon" src="imgs/goods.jpg" alt="goods"/>
-        </div>
-        <p class="goods_code">75054</p>
-        <p class="goods_description">Кожаный браслет с замком из серебра Pandora </p>
-        <p class="price">7 199 руб.</p>
-        <a class="add_to_card" href="goods.html">Смотреть</a>
-    </div>
+    <?php endforeach; ?>
 </div>
 <?php endif; ?>

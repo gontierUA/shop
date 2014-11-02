@@ -1,5 +1,7 @@
 <?php
 
+include 'app/Model/Product.php';
+
 class ConfirmationController extends Controller
 {
     function __construct()
@@ -14,6 +16,10 @@ class ConfirmationController extends Controller
         $data['sidebar'] = false;
         $data['cart_counter'] = $this->model->get_cart_counter();
 
-        $this->view->generate(null, null, $data);
+        if (isset($_POST['item'])) {
+            $this->model->save_items($_POST['item']);
+            $this->view->generate(null, null, $data);
+        }
+        return false;
     }
 }

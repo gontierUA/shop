@@ -13,7 +13,11 @@ class ProductsController extends Controller
     function itemAction($params)
     {
         $item_id = $params[3];
-        $data['get_with_products'] = $this->model->get_with_products($item_id);
+
+        $data['products_bought'] = $this->model->bought_products($item_id);
+        $data['products_watched'] = $this->model->watched_products($item_id);
+        $data['products_also'] = $this->model->also_products($item_id);
+
         $data['sidebar'] = false;
         $data['cart_counter'] = $this->model->get_cart_counter();
 

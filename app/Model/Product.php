@@ -7,7 +7,7 @@ class Product extends Model
         $mysqli = Product::open_database_connection();
 
         $products = array();
-        if ($result = $mysqli->query('SELECT id, sku, title, image, price FROM product ORDER BY watched DESC')) {
+        if ($result = $mysqli->query('SELECT id, sku, title, image, price FROM product ORDER BY bought DESC, watched DESC, in_cart DESC')) {
             while ($row = $result->fetch_assoc()) {
                 $products[] = $row;
             }
@@ -17,12 +17,11 @@ class Product extends Model
         return $products;
     }
 
-    /* TODO сейчас тупо продукты выводятся, анализа нет :( */
-    public function get_with_products($id) {
+    public function bought_products($id) {
         $mysqli = Product::open_database_connection();
 
         $products = array();
-        if ($result = $mysqli->query('SELECT id, sku, title, image, price FROM product ORDER BY id LIMIT 4')) {
+        if ($result = $mysqli->query('SELECT id, sku, title, image, price FROM product ORDER BY bought LIMIT 4')) {
             while ($row = $result->fetch_assoc()) {
                 $products[] = $row;
             }
@@ -31,6 +30,33 @@ class Product extends Model
         $mysqli->close();
         return $products;
     }
+    public function watched_products($id) {
+        $mysqli = Product::open_database_connection();
+
+        $products = array();
+        if ($result = $mysqli->query('SELECT id, sku, title, image, price FROM product ORDER BY watched LIMIT 4')) {
+            while ($row = $result->fetch_assoc()) {
+                $products[] = $row;
+            }
+            $result->close();
+        }
+        $mysqli->close();
+        return $products;
+    }
+    public function also_products($id) {
+        $mysqli = Product::open_database_connection();
+
+        $products = array();
+        if ($result = $mysqli->query('SELECT id, sku, title, image, price FROM product ORDER BY in_cart LIMIT 4')) {
+            while ($row = $result->fetch_assoc()) {
+                $products[] = $row;
+            }
+            $result->close();
+        }
+        $mysqli->close();
+        return $products;
+    }
+
 
     public function get_product($id)
     {
