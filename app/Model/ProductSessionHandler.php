@@ -75,30 +75,6 @@ class ProductSessionHandler
                     $dataTable['item_1'] = $row['item_1'];
                     $dataTable['item_2'] = $row['item_2'];
                 }
-                /*todo*/
-//                if ($dataTable['item_1'] != 0 && $dataTable['item_2'] != 0) {
-//                    $this->db->query('UPDATE session SET item_1 = 0, item_2 = 0 WHERE id = ' . $id);
-//                    if ($issetRecord = $this->db->query('SELECT id FROM session WHERE id=' . $id)) {
-//                        while ($row = $issetRecord->fetch_assoc()) {
-//                            $dataTable['item_1'] = $row['item_1'];
-//                            $dataTable['item_2'] = $row['item_2'];
-//                        }
-//                    }
-//                }
-//                if ($issetRecord = $this->db->query('SELECT id FROM session WHERE id=' . $id)) {
-//
-//                }
-
-//                if ($dataTable['item_2'] != 0) {
-//                    $this->db->query('UPDATE session SET item_1 = 0, item_2 = 0 WHERE id = ' . $id);
-//                    $this->db->query('UPDATE recommend SET count = count + 1 WHERE item_1 = ' . $dataTable['item_1'] . ' AND item_2 = ' . $dataTable['item_2']);
-//                }
-//                if ($dataTable['item_1'] != $itemID) {
-//                    $this->db->query('UPDATE session SET item_1 = ' . $itemID . ' WHERE id = ' . $id);
-//                } else {
-//                    $this->db->query('UPDATE session SET item_2 = ' . $itemID . ' WHERE id = ' . $id);
-//                }
-//                return $dataTable;
             }
         }
 
@@ -107,22 +83,11 @@ class ProductSessionHandler
 
     public function _destroy($id)
     {
-        $file = "$this->savePath/sess_$id";
-        if (file_exists($file)) {
-            unlink($file);
-        }
-
         return true;
     }
 
     public function _gc($maxlifetime)
     {
-        foreach (glob("$this->savePath/sess_*") as $file) {
-            if (filemtime($file) + $maxlifetime < time() && file_exists($file)) {
-                unlink($file);
-            }
-        }
-
         return true;
     }
 }
