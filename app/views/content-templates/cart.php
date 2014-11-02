@@ -22,7 +22,7 @@
                         <p class="goods_description"><?php echo $item['title'] ?></p>
                     </td>
                     <td class="third">
-                        <input class="counter" type="number" value="<?php echo $item['count'] ?>"/>
+                        <input class="counter" type="number" min="1" max="99" value="<?php echo $item['count'] ?>"/>
                     </td>
                     <td class="fourth">
                         <p class="price"><span class="price_number"><?php echo $item['price'] ?></span><sub> грн.</sub></p>
@@ -35,7 +35,7 @@
             <?php endforeach; ?>
         </table>
         <div class="amount">
-            Стоимость <span class="amout_summ"><?php echo $data['cart_items']['total_price'] ?></span><sub> грн.</sub>
+            Стоимость <span class="total_amount"><?php echo $data['cart_items']['total_price'] ?></span><sub> грн.</sub>
         </div>
         <div class="checkout_form_wraper">
             <div class="field_wraper">
@@ -59,7 +59,7 @@
                 <input id="tel" type="text" name="tel"/>
                 <p>для связи с курьером</p>
             </div>
-            <button type="submit">Заказать и уточнить детали</button>
+            <button type="submit" class="submit">Заказать и уточнить детали</button>
         </div>
     </form>
     <?php endif; ?>

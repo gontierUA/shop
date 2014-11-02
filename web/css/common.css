@@ -308,6 +308,11 @@ aside {
 .tabs__content.shown {
 	display: block;
 }
+
+#description {
+    font-size: 14px;
+    line-height: 16px;
+}
 .goods_add_info li {
 	margin-bottom: 12px;
 }
@@ -511,5 +516,16 @@ h2 {
     font-size: 14px;
     line-height: 32px;
     color: #6b6b6b;
+}
+.logo {
+    font-size: 12px;
+    left: 35px;
+    position: absolute;
+    text-align: center;
+    top: 24px;
+}
+.logo a {
+    display: block;
+    color: #a5a5a5;
 }
 /*END of CHECKOUT PAGE*/

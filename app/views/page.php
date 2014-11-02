@@ -31,6 +31,12 @@
 </head>
 <body class="<?php echo $bodyClass ?>">
 <div class="wraper">
+    <div class="logo">
+        <a href="/">
+            <img alt="Beautiful things" src="/web/imgs/logo_icon.png">
+            <p>Красивые штуки</p>
+        </a>
+    </div>
     <ul class="navigation cf">
         <li class="nav_item active">
             <a href="/">Каталог товаров</a>
