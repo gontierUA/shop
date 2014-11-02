@@ -19,7 +19,7 @@ $(document).ready(function(){
 		},
 		onFinish: function() {
 			var filterValue = $("#example_id").val();
-			$('<div class="goods_preload"><img src="imgs/goods_preloader.gif" alt=""/></div>').prependTo($('.goods_wraper')).fadeIn()
+			$('<div class="goods_preload"><imgs src="imgs/goods_preloader.gif" alt=""/></div>').prependTo($('.goods_wraper')).fadeIn()
 			$.ajax({
 				url: '',
 				type: 'POST',

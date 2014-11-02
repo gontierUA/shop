@@ -39,7 +39,18 @@ class ProductSessionHandler
 
     public function _read($id)
     {
-        return (string)@file_get_contents("$this->savePath/sess_$id");
+        $dataTable = array();
+        $session = $this->db->query('SELECT item_1, item_2 FROM session WHERE id=' . $id);
+        if ($session) {
+            while ($row = $session->fetch_assoc()) {
+                $dataTable['item_1'] = $row['item_1'];
+                $dataTable['item_2'] = $row['item_2'];
+            }
+            return $dataTable;
+        } else {
+            $this->db->query('INSERT INTO session (id, item_1, item_2) VALUES ("' . $id . '", 0, 0)');
+            return '';
+        }
     }
 
     public function _write($id, $data){
@@ -55,15 +66,43 @@ class ProductSessionHandler
             }
             $watched++;
 
+            $this->db->query('UPDATE product SET watched = ' . $watched . ' WHERE id = ' . $itemID);
 
-            $isInserted = $this->db->query('UPDATE product SET watched = ' . $watched . ' WHERE id = ' . $itemID);
-            if($isInserted){
-                return file_put_contents("$this->savePath/sess_$id", $data) === false ? false : true;
-            }else{
-                return '';
+            /* recommendations */
+            $dataTable = array();
+            if ($result = $this->db->query('SELECT item_1, item_2 FROM session WHERE id=' . $id)) {
+                while ($row = $result->fetch_assoc()) {
+                    $dataTable['item_1'] = $row['item_1'];
+                    $dataTable['item_2'] = $row['item_2'];
+                }
+                /*todo*/
+//                if ($dataTable['item_1'] != 0 && $dataTable['item_2'] != 0) {
+//                    $this->db->query('UPDATE session SET item_1 = 0, item_2 = 0 WHERE id = ' . $id);
+//                    if ($issetRecord = $this->db->query('SELECT id FROM session WHERE id=' . $id)) {
+//                        while ($row = $issetRecord->fetch_assoc()) {
+//                            $dataTable['item_1'] = $row['item_1'];
+//                            $dataTable['item_2'] = $row['item_2'];
+//                        }
+//                    }
+//                }
+//                if ($issetRecord = $this->db->query('SELECT id FROM session WHERE id=' . $id)) {
+//
+//                }
+
+//                if ($dataTable['item_2'] != 0) {
+//                    $this->db->query('UPDATE session SET item_1 = 0, item_2 = 0 WHERE id = ' . $id);
+//                    $this->db->query('UPDATE recommend SET count = count + 1 WHERE item_1 = ' . $dataTable['item_1'] . ' AND item_2 = ' . $dataTable['item_2']);
+//                }
+//                if ($dataTable['item_1'] != $itemID) {
+//                    $this->db->query('UPDATE session SET item_1 = ' . $itemID . ' WHERE id = ' . $id);
+//                } else {
+//                    $this->db->query('UPDATE session SET item_2 = ' . $itemID . ' WHERE id = ' . $id);
+//                }
+//                return $dataTable;
             }
         }
-        return file_put_contents("$this->savePath/sess_$id", $data) === false ? false : true;
+
+        return false;
     }
 
     public function _destroy($id)

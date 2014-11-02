@@ -14,6 +14,8 @@ class CartController extends Controller
     {
         $data['title'] = 'Ваш заказ';
         $data['sidebar'] = false;
+        $data['cart_counter'] = $this->model->get_cart_counter();
+
         $this->view->generate('cart.php', null, $data);
     }
 
@@ -21,11 +23,8 @@ class CartController extends Controller
     {
         if (isset($_POST['item']) && is_numeric($_POST['item'])) {
             $itemID = $_POST['item'];
-            $toCart = $this->model->card_record($itemID);
 
-            if ($toCart) {
-                print json_encode('success');
-            }
+            print json_encode($this->model->cart_record($itemID));
             die();
         }
         return false;
