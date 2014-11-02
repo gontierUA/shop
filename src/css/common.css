@@ -505,12 +505,14 @@ h2 {
 	color: #6b6b6b;
 }
 .logo {
-	color: #a5a5a5;
 	font-size: 12px;
 	left: 35px;
 	position: absolute;
 	text-align: center;
 	top: 24px;
-
+}
+.logo a {
+	display: block;
+	color: #a5a5a5;
 }
 /*END of CHECKOUT PAGE*/
