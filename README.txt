@@ -1,3 +1,10 @@
+DB app/core/Model.php
+host        localhost
+user        shop_user
+password    shop_user
+db_name     shop
+
+
 СТРУКТУРА:
 
 index.php
